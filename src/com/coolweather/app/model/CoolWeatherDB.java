@@ -97,10 +97,8 @@ public class CoolWeatherDB {
 		List<City> list = new ArrayList<City>();
 		Cursor cursor = db.query("City",null,"province_id = ?",
 				new String[]{String.valueOf(provinceId)},null,null,null);
-		Log.d("CoolWeatherDB", "城市个数 : "+cursor.getCount());
-		//cursor.getColumnIndex("city_name");
 		if(cursor.moveToFirst()){
-			/*
+			
 			do{
 				City city = new City();
 				city.setId(cursor.getInt(cursor.getColumnIndex("id")));
@@ -108,9 +106,9 @@ public class CoolWeatherDB {
 				city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
 				city.setProvinceId(provinceId);
 				list.add(city);
-				Log.d("CoolWeatherDB", "城市名："+city.getCityName());
 			}while(cursor.moveToNext());
-			*/
+			
+			/*
 			while(cursor.moveToNext()){
 			City city = new City();
 			city.setId(cursor.getInt(cursor.getColumnIndex("id")));
@@ -118,8 +116,10 @@ public class CoolWeatherDB {
 			city.setCityCode(cursor.getString(cursor.getColumnIndex("city_code")));
 			city.setProvinceId(provinceId);
 		    list.add(city);
+		     }
+		    */
 
-		  }
+		 
 		}
 		if(cursor != null){
 			cursor.close();

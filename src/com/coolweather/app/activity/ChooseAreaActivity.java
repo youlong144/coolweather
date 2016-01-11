@@ -139,14 +139,9 @@ public class ChooseAreaActivity extends Activity{
 		cityList = coolWeatherDB.loadCities(selectedProvince.getId());
 		if(cityList.size() > 0){
 			dataList.clear();
-			for(City city : cityList){
-	          
-				if(!dataList.equals(city)){
-					dataList.add(city.getCityName());
-					
-					Log.d("ChooseAreaActivity", "增加到列表。。。。。 : ");
-				}	
-
+			for(City city : cityList){          
+			//	if(!dataList.equals(city))
+				dataList.add(city.getCityName());
 			}	
 			adapter.notifyDataSetChanged();
 			listView.setSelection(0);
